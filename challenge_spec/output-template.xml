@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{ TITLE GOES HERE }}</title>
+  <title>Welcome to Redbubble!</title>
   <style type="text/css">
     nav {
       margin: 10px;
