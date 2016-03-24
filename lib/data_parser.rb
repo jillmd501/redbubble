@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'erb'
 
 class Parser
   attr_reader :filename
@@ -7,10 +8,14 @@ class Parser
     @filename = filename
   end
 
-  def read_data
+  def read_file
     File.open(filename) do |file|
       Nokogiri::XML(file).xpath("//work")
     end
+  end
+
+  def write_file(filename, content)
+    File.open(filename, 'w') { |file| file.write(content) }
   end
 
   def validate_params(filename, output_path)
