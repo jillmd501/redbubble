@@ -30,3 +30,8 @@ Run the following command to run the test suite:
 ```
 rspec
 ```
+
+Sources used:
+
+* http://apidock.com/ruby/ERB
+* http://www.nokogiri.org/tutorials/searching_a_xml_html_document.html
