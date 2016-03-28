@@ -1,12 +1,25 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    diff-lcs (1.2.5)
     materialize-sass (0.97.5)
       sass (~> 3.3)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.3)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     sass (3.4.21)
 
 PLATFORMS
@@ -14,8 +27,8 @@ PLATFORMS
 
 DEPENDENCIES
   materialize-sass
-  minitest
   nokogiri
+  rspec
 
 BUNDLED WITH
    1.10.6

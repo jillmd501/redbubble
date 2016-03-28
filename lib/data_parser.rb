@@ -1,21 +1,21 @@
+require_relative 'index'
+require_relative 'work'
+
 require 'nokogiri'
-require 'erb'
 
 class Parser
-  attr_reader :filename
+  attr_reader :filename, :works
 
   def initialize
     @filename = filename
+    @works = []
   end
 
-  def create
-    works = Work.from_xml(@filename)
-  end
-
-
-  def read_file
+  def read_file(filename)
     File.open(filename) do |file|
-      Nokogiri::XML(file).xpath("//work")
+      Nokogiri::XML(file).xpath("//work").each do |work|
+      @works <<  Work.new(work)
+      end
     end
   end
 
@@ -25,7 +25,7 @@ class Parser
 
   def html(title, nav_links, works)
     works = works.first(10)
-    ERB.new(File.read(File.join("template", "index.html.erb"))).result(binding)
+    ERB.new(File.read(File.join("template", "index.html"))).result(binding)
   end
 
 private
@@ -40,5 +40,8 @@ private
   end
 
 
-
 end
+
+parser = Parser.new
+parser.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+puts parser.works[0].make
