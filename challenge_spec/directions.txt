@@ -5,6 +5,7 @@ Your task is to create a set of static HTML files to allow a user to browse thes
 Create a batch processor that takes the input file and produces a single HTML file (based on the output template given with this test) for each camera make, camera model and also an index.
 
 The index HTML page must contain:
+
 - Thumbnail images for the first 10 work
 - Navigation that allows the user to browse to all camera makes
 

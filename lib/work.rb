@@ -8,20 +8,23 @@ class Work
   end
 
   def make
-    binding.pry
-    Nokogiri::XML(@xml).xpath("//work//exif//make")
+    @xml.xpath("//work//exif//make")
   end
 
   def model
-    Nokogiri::XML(@xml).xpath("//work//exif//model")
+    @xml.xpath("//work//exif//model")
   end
 
   def thumbnail
-    Nokogiri::XML(@xml).xpath("//work//urls//url type='small'")
+    @xml.xpath("//work//urls//url type='small'")
+  end
+
+  def filename
+    @xml.xpath("//work//filename")
   end
 
   def id
-    Nokogiri::XML(@xml).xpath("//work//id")
+    @xml.xpath("//work//id")
   end
 
 end

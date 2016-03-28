@@ -10,12 +10,14 @@
 </head>
 <body>
   <header>
-    <h1>TITLE</h1>
+    <h1>Redbubble Coding Challenge</h1>
 
     <nav>
       NAV LINKS
     </nav>
   </header>
-      THUMBNAIL
+  <% @works.each do |work| %>
+    <img src="<%= work.thumbnail %>" />
+  <% end %>
 </body>
 </html>
