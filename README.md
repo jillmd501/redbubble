@@ -25,12 +25,6 @@ Run the following command to run the processor:
 ruby data_parser.rb
 ```
 
-Run the following command to run the test suite:
-
-```
-rspec
-```
-
 Sources used:
 
 * http://apidock.com/ruby/ERB

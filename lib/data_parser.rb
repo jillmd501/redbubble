@@ -23,12 +23,9 @@ class Parser
   end
 
   def write_erb_file(filename, content)
-    erb_str = File.read(erb_file)
-    renderer = ERB.new(erb_str)
-    result = renderer.result()
-
-    File.open(html_file, 'w') do |f|
-      f.write(result)
+    @content = content
+    File.open(File.basename(filename, '.erb'), 'w') do |f|
+      f.write(ERB.new(File.read(filename)).result())
     end
   end
 
@@ -37,19 +34,29 @@ class Parser
       raise "File does not exist!"
     end
   end
-
-
 end
 
-parser = Parser.new
-@works = parser.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
-erb_file = './views/template/index.html.erb'
-html_file = File.basename(erb_file, '.erb')
 
-erb_str = File.read(erb_file)
-renderer = ERB.new(erb_str)
-result = renderer.result()
+@content = Parser.new.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+filename = './views/template/index.html.erb'
+File.open(File.basename(filename, '.erb'), 'w') do |f|
+  f.write(ERB.new(File.read(filename)).result())
+end
 
-File.open(html_file, 'w') do |f|
-  f.write(result)
+@model_data = Parser.new.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+filename = './views/template/model.html.erb'
+@model_data.each do |data|
+  @content = data
+  File.open(File.basename(filename, '.erb'), 'w') do |f|
+    f.write(ERB.new(File.read(filename)).result())
+  end
+end
+
+@make_data = Parser.new.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+filename = './views/template/model.html.erb'
+@model_data.each do |data|
+  @content = data
+  File.open(File.basename(filename, '.erb'), 'w') do |f|
+    f.write(ERB.new(File.read(filename)).result())
+  end
 end

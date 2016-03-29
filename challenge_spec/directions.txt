@@ -19,4 +19,6 @@ Each Camera Model HTML page must contain:
 
 The batch processor should take the location of the input file and the output directory as parameters.
 
+#ruby redbubble/data_parser.rb ~/input.xml ~/output/
+
 The input file only contains a small sample set of works.
