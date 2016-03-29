@@ -10,14 +10,15 @@
 </head>
 <body>
   <header>
-    <h1>Redbubble Coding Challenge</h1>
+    <h1>Redbubble Coding Challenge - Model</h1>
 
     <nav>
       NAV LINKS
     </nav>
   </header>
-    <% @works.each do |work| %>
-      <%= work.model %>
+    <% (0..9).map do |index| %>
+      <img src="<%= @works[index].thumbnail %>">
+      <%= @works[index].model[index] %>
     <% end %>
   </body>
 </html>
