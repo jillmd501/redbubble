@@ -32,7 +32,6 @@ class Parser
     erb_str = Parser.read_file(@works)
     renderer = ERB.new(erb_str)
     content = renderer.content()
-  #   ERB.new(File.read(File.join("template", "index.html"))).result(binding)
   end
 
   def validate_params(filename, output_path)
@@ -49,7 +48,7 @@ end
 
 parser = Parser.new
 @works = parser.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
-erb_file = './views/template/make.html.erb'
+erb_file = './views/template/index.html.erb'
 html_file = File.basename(erb_file, '.erb')
 
 erb_str = File.read(erb_file)

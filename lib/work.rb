@@ -16,7 +16,7 @@ class Work
   end
 
   def thumbnail
-    @xml.xpath("//work//urls//url type='small'")
+    @xml.xpath("//work//urls").first.children[1].children.text
   end
 
   def filename
