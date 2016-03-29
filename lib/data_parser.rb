@@ -22,24 +22,19 @@ class Parser
     @works
   end
 
-  def write_file(filename, content)
-    File.open(filename, 'w') do |file|
-      file.write(content)
+  def write_erb_file(filename, content)
+    erb_str = File.read(erb_file)
+    renderer = ERB.new(erb_str)
+    result = renderer.result()
+
+    File.open(html_file, 'w') do |f|
+      f.write(result)
     end
   end
 
-  def create_content
-    erb_str = Parser.read_file(@works)
-    renderer = ERB.new(erb_str)
-    content = renderer.content()
-  end
-
-  def validate_params(filename, output_path)
+  def validate_params(filename)
     unless filename && File.exist?(filename)
       raise "File does not exist!"
-    end
-    unless output_path && File.directory?(output_path)
-      raise "Output does not exist!"
     end
   end
 

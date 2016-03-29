@@ -10,12 +10,15 @@
 </head>
 <body>
   <header>
-    <h1>Redbubble Coding Challenge</h1>
+    <h1>Redbubble Coding Challenge - Make</h1>
 
     <nav>
       NAV LINKS
     </nav>
   </header>
-    <%= @works.map {|work| work.make}.first %>
+    <% (0..9).map do |index| %>
+      <img src="<%= @works[index].thumbnail %>">
+      <%= @works[index].make[index] %>
+    <% end %>
   </body>
 </html>
