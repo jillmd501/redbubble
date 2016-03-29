@@ -16,8 +16,9 @@
       NAV LINKS
     </nav>
   </header>
-  <% @works.each do |work| %>
-    <img src="<%= work.thumbnail %>" />
-  <% end %>
-</body>
+    <% (0..9).map do |index| %>
+      <img src="<%= @works[index].thumbnail %>">
+      <%= @works[index].make[index] %>
+    <% end %>
+  </body>
 </html>

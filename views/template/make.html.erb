@@ -16,8 +16,6 @@
       NAV LINKS
     </nav>
   </header>
-    <% @works.each do |work| %>
-      <%= work.make %>">
-    <% end %>
+    <%= @works.map {|work| work.make}.first %>
   </body>
 </html>
