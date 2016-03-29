@@ -23,12 +23,8 @@ class Parser
   end
 
   def write_file(filename, content)
-    erb_str = File.read(erb_file)
-    renderer = ERB.new(erb_str)
-    result = renderer.result()
-
     File.open(filename, 'w') do |file|
-      file.write(result)
+      file.write(content)
     end
   end
 
@@ -36,6 +32,7 @@ class Parser
     erb_str = Parser.read_file(@works)
     renderer = ERB.new(erb_str)
     content = renderer.content()
+  #   ERB.new(File.read(File.join("template", "index.html"))).result(binding)
   end
 
   def validate_params(filename, output_path)
@@ -47,24 +44,18 @@ class Parser
     end
   end
 
-  def create_html(index_file)
-    index_file = './views/template/index.html.erb'
-    html_file = File.basename(erb_file, '.erb')
-  end
 
 end
 
-# parser = Parser.new
-# @works = parser.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+parser = Parser.new
+@works = parser.read_file("/Users/jilldonohue/redbubble/data/input/works.xml")
+erb_file = './views/template/make.html.erb'
+html_file = File.basename(erb_file, '.erb')
 
-# index_file = './views/template/index.html.erb'
-# html_file = File.basename(erb_file, '.erb')
+erb_str = File.read(erb_file)
+renderer = ERB.new(erb_str)
+result = renderer.result()
 
-# erb_str = File.read(erb_file)
-# # binding.pry
-# renderer = ERB.new(erb_str)
-# result = renderer.result()
-
-# File.open(html_file, 'w') do |f|
-#   f.write(result)
+File.open(html_file, 'w') do |f|
+  f.write(result)
 end

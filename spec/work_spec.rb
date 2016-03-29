@@ -4,11 +4,8 @@ describe Work do
   describe "make" do
     context "complete test data" do
       before(:all) do
-        @results = Work.make("#{File.dirname(__FILE__)}/../input_data/test1.xml")
+        @results = Work.make("#{File.dirname(__FILE__)}/../data/input/works.xml")
         @work = @results.first
-      end
-      it "should only find one result" do
-        @results.size.should == 1
       end
       it "should load the make" do
         @work.make.should == "NIKON CORPORATION"
