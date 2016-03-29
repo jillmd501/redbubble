@@ -10,15 +10,16 @@
 </head>
 <body>
   <header>
-    <h1>Redbubble Coding Challenge - Model</h1>
+    <h1 style="color:red;">Redbubble Coding Challenge - Model</h1>
 
     <nav>
       NAV LINKS
     </nav>
   </header>
     <% (0..9).map do |index| %>
-      <img src="<%= @works[index].thumbnail %>">
-      <%= @works[index].model[index] %>
+      <br>
+      <img src="<%= @content[index].thumbnail %>">
+      <%= @content[index].model[index] %>
     <% end %>
   </body>
 </html>
