@@ -25,7 +25,6 @@ Run the following command to run the processor:
 ruby ./lib/data_parser.rb
 ```
 
-Sources used:
+#### My blog on my adventure through this challenge:
 
-* http://apidock.com/ruby/ERB
-* http://www.nokogiri.org/tutorials/searching_a_xml_html_document.html
+[My 5ive Year Plan](http://my5iveyearplan.tumblr.com/post/141978656058/accept-your-weaknesses)

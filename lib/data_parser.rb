@@ -3,7 +3,6 @@ require_relative 'work'
 
 require 'nokogiri'
 require 'erb'
-require 'pry'
 
 class Parser
   attr_reader :filename, :works

@@ -5,7 +5,6 @@ class Index
   end
 
   def model(file)
-    binding.pry
     Nokogiri::XML(file).xpath("works//work//exif//models")
   end
 
