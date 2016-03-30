@@ -1,5 +1,3 @@
-require 'pry'
-
 class Work
   attr_reader :xml
 
@@ -26,5 +24,4 @@ class Work
   def id
     @xml.xpath("//work//id")
   end
-
 end
