@@ -22,7 +22,7 @@ Each Camera Model HTML page must contain:
 Run the following command to run the processor:
 
 ```
-ruby data_parser.rb
+ruby ./lib/data_parser.rb
 ```
 
 Sources used:
